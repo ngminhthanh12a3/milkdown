@@ -40,12 +40,21 @@ importers:
       '@changesets/cli':
         specifier: ^2.22.0
         version: 2.27.12
+      '@codemirror/language':
+        specifier: ^6.10.1
+        version: 6.10.8
+      '@codemirror/legacy-modes':
+        specifier: ^6.4.3
+        version: 6.4.3
       '@commitlint/cli':
         specifier: ^19.0.0
         version: 19.7.1(@types/node@22.13.1)(typescript@5.7.3)
       '@commitlint/config-conventional':
         specifier: ^19.0.0
         version: 19.7.1
+      '@milkdown/react':
+        specifier: link:packages/integrations/react
+        version: link:packages/integrations/react
       '@nrwl/tao':
         specifier: 19.8.4
         version: 19.8.4(@swc-node/register@1.10.9(@swc/core@1.10.15(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.15(@swc/helpers@0.5.15))
@@ -85,6 +94,9 @@ importers:
       '@types/node':
         specifier: ^22.0.0
         version: 22.13.1
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.18
       '@types/rollup-plugin-auto-external':
         specifier: ^2.0.2
         version: 2.0.5
@@ -163,6 +175,9 @@ importers:
       rollup-plugin-postcss:
         specifier: ^4.0.2
         version: 4.0.2(postcss@8.5.1)(ts-node@10.9.1(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))
+      storybook:
+        specifier: ^8.2.7
+        version: 8.5.3(prettier@3.5.0)
       tailwindcss:
         specifier: ^4.0.0
         version: 4.0.5
@@ -2020,6 +2035,9 @@ packages:
   '@codemirror/legacy-modes@6.4.2':
     resolution: {integrity: sha512-HsvWu08gOIIk303eZQCal4H4t65O/qp1V4ul4zVa3MHK5FJ0gz3qz3O55FIkm+aQUcshUOjBx38t2hPiJwW5/g==}
 
+  '@codemirror/legacy-modes@6.4.3':
+    resolution: {integrity: sha512-s1g+q4bil8Cs4O+ueIiKIhz9MQOGcRyxJglma8BYIWc/oEJLo13S3LYSWKaqhKwXGgt1GgZ66hCploHZD9Sstw==}
+
   '@codemirror/lint@6.8.4':
     resolution: {integrity: sha512-u4q7PnZlJUojeRe8FJa/njJcMctISGgPQ4PnWsd9268R4ZTtU+tfFYmwkBvgcrK2+QQ8tYFVALVb5fVJykKc5A==}
 
@@ -3541,10 +3559,16 @@ packages:
   '@types/prismjs@1.26.5':
     resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
 
+  '@types/prop-types@15.7.14':
+    resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
+
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
       '@types/react': ^19.0.0
+
+  '@types/react@18.3.18':
+    resolution: {integrity: sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==}
 
   '@types/react@19.0.8':
     resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
@@ -8525,6 +8549,10 @@ snapshots:
     dependencies:
       '@codemirror/language': 6.10.8
 
+  '@codemirror/legacy-modes@6.4.3':
+    dependencies:
+      '@codemirror/language': 6.10.8
+
   '@codemirror/lint@6.8.4':
     dependencies:
       '@codemirror/state': 6.5.2
@@ -9995,9 +10023,16 @@ snapshots:
 
   '@types/prismjs@1.26.5': {}
 
+  '@types/prop-types@15.7.14': {}
+
   '@types/react-dom@19.0.3(@types/react@19.0.8)':
     dependencies:
       '@types/react': 19.0.8
+
+  '@types/react@18.3.18':
+    dependencies:
+      '@types/prop-types': 15.7.14
+      csstype: 3.1.3
 
   '@types/react@19.0.8':
     dependencies:
